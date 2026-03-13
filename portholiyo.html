@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miraziz Portfolio - O‘yinlar</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:Segoe UI;}
+body{background:#0f172a; color:white; line-height:1.6; scroll-behavior:smooth;}
+nav{display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:#020617; position:sticky; top:0; z-index:100;}
+nav h1{color:#38bdf8;}
+nav a{margin-left:25px; text-decoration:none; color:white; transition:.3s;}
+nav a:hover{color:#38bdf8;}
+.hero{padding:140px 10%; text-align:center; background:linear-gradient(120deg,#020617,#0f172a);}
+.hero h2{font-size:48px; margin-bottom:20px;}
+.hero span{color:#38bdf8;}
+.hero p{max-width:800px;margin:auto; opacity:.85; font-size:18px;}
+.hero button{margin-top:30px;padding:14px 35px;border:none;background:#38bdf8;color:black;font-weight:bold;border-radius:6px;cursor:pointer;transition:.3s;}
+.hero button:hover{transform:scale(1.08);}
+section{padding:100px 10%; text-align:center;}
+section h2{font-size:36px;margin-bottom:20px;}
+.section-text{max-width:850px;margin:auto;opacity:.85;margin-bottom:50px;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+.project-card{background:#1e293b;padding:30px;border-radius:12px;transition:.3s;cursor:pointer;text-align:left;}
+.project-card:hover{transform:translateY(-10px);background:#334155;}
+.project-card h3{margin-bottom:10px;color:#38bdf8;}
+.project-card p{margin-bottom:8px;opacity:.8;}
+.game-box{background:#111827; padding:20px; border-radius:12px; margin-top:10px; text-align:center;}
+button.game-btn{padding:10px 20px;margin-top:10px; border:none; border-radius:6px; background:#38bdf8; color:black; font-weight:bold; cursor:pointer; transition:.3s;}
+button.game-btn:hover{transform:scale(1.1);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;}
+.skill-card{background:#1e293b;padding:40px;border-radius:12px;transition:.3s;text-align:center;}
+.skill-card:hover{transform:translateY(-8px);background:#38bdf8;color:black;}
+.skill-card svg{width:60px;height:60px;margin-bottom:15px;}
+.contact-box{margin-top:40px;display:flex;flex-direction:column;gap:18px;align-items:center;}
+.contact-btn{background:#1e293b;padding:14px 30px;border-radius:8px;text-decoration:none;color:white;transition:.3s;}
+.contact-btn:hover{background:#38bdf8;color:black;transform:scale(1.05);}
+footer{text-align:center;padding:25px;background:#020617;margin-top:60px;}
+@keyframes race{0%{transform:translateX(0);}50%{transform:translateX(100px);}100%{transform:translateX(0);}}
+</style>
+</head>
+<body>
+
+<nav>
+<h1>Miraziz</h1>
+<div>
+<a href="#html">HTML</a>
+<a href="#css">CSS</a>
+<a href="#js">JS</a>
+<a href="#skills">Ko‘nikmalar</a>
+<a href="#contact">Aloqa</a>
+</div>
+</nav>
+
+<div class="hero">
+<h2>Salom, men <span>Miraziz</span></h2>
+<p>Men frontend dasturchiman. Ushbu saytda HTML, CSS va JavaScript yordamida yaratgan mini-o‘yinlarim va loyihalarimni ko‘rishingiz mumkin.</p>
+<button onclick="document.getElementById('html').scrollIntoView({behavior:'smooth'})">O‘yinlarni ko‘rish</button>
+</div>
+
+<!-- HTML Projects -->
+<section id="html">
+<h2>HTML O‘yinlar</h2>
+<p class="section-text">Foydalanish uchun HTML elementlari bilan yaratilgan sodda o‘yinlar.</p>
+<div class="projects-grid">
+<div class="project-card">
+<h3>HTML Quiz O‘yini</h3>
+<p>Bir nechta variantli savol-javob o‘yini.</p>
+<div class="game-box">
+<p>To‘g‘ri javobni tanlang:</p>
+<form id="quiz-form">
+<input type="radio" name="q1" value="wrong">Variant A<br>
+<input type="radio" name="q1" value="correct">Variant B<br>
+<input type="radio" name="q1" value="wrong">Variant C<br>
+<button type="button" class="game-btn" onclick="checkQuiz()">Javobni tekshirish</button>
+</form>
+<p id="quiz-result"></p>
+</div>
+</div>
+<div class="project-card">
+<h3>HTML Memory O‘yini</h3>
+<p>Kartalarni o‘zgartirish va eslab qolish o‘yini.</p>
+<div class="game-box">
+<p>Kartalarni o‘zgartirish joyi</p>
+<button class="game-btn">Kartani o‘zgartirish</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CSS Projects -->
+<section id="css">
+<h2>CSS O‘yinlar</h2>
+<p class="section-text">Interaktiv CSS mini-o‘yinlari, hover effektlar va animatsiyalar bilan.</p>
+<div class="projects-grid">
+<div class="project-card">
+<h3>CSS Shakl Topish O‘yini</h3>
+<p>Uchta shakl orasidan doirani toping. Tanlash uchun ustiga hover qiling!</p>
+<div class="game-box">
+<div style="display:flex; justify-content:center; gap:20px;">
+<div class="game-shape" style="width:60px;height:60px;background:#38bdf8;border-radius:50%;" onclick="checkShape(this, true)"></div>
+<div class="game-shape" style="width:60px;height:60px;background:#facc15;border-radius:0%;" onclick="checkShape(this, false)"></div>
+<div class="game-shape" style="width:60px;height:60px;background:#f87171;border-radius:0%;" onclick="checkShape(this, false)"></div>
+</div>
+<p id="shape-result" style="margin-top:10px;"></p>
+</div>
+</div>
+<div class="project-card">
+<h3>CSS Hover Puzzle</h3>
+<p>Kvadratlar ustiga hover qilganda ranglarini o‘zgartiradi. Faqat CSS bilan ishlangan.</p>
+<div class="game-box" style="display:flex; justify-content:center; gap:10px;">
+<div style="width:50px;height:50px;background:#0ea5e9; transition:.3s;" class="game-btn" onmouseover="this.style.background='#facc15'"></div>
+<div style="width:50px;height:50px;background:#f43f5e; transition:.3s;" class="game-btn" onmouseover="this.style.background='#38bdf8'"></div>
+<div style="width:50px;height:50px;background:#22c55e; transition:.3s;" class="game-btn" onmouseover="this.style.background='#f87171'"></div>
+</div>
+<p>Hover qilib ranglarni o‘zgartiring!</p>
+</div>
+</div>
+</section>
+
+<!-- JS Projects -->
+<section id="js">
+<h2>JavaScript O‘yinlar</h2>
+<p class="section-text">JavaScript yordamida yaratilgan interaktiv o‘yinlar.</p>
+<div class="projects-grid">
+<div class="project-card">
+<h3>JS Click Counter O‘yini</h3>
+<p>5 soniya ichida tugmani imkon qadar ko‘p bosing.</p>
+<div class="game-box">
+<button class="game-btn" onclick="incrementCounter()">Bos!</button>
+<p>Bosishlar: <span id="click-count">0</span></p>
+<p id="time-left">Qolgan vaqt: 5</p>
+</div>
+</div>
+<div class="project-card">
+<h3>JS Tosh Qog‘oz Qaychi</h3>
+<p>Kompyuterga qarshi Tosh-Qog‘oz-Qaychi o‘ynang.</p>
+<div class="game-box">
+<button class="game-btn" onclick="playRPS('rock')">Tosh</button>
+<button class="game-btn" onclick="playRPS('paper')">Qog‘oz</button>
+<button class="game-btn" onclick="playRPS('scissors')">Qaychi</button>
+<p id="rps-result"></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<h2>Ko‘nikmalar</h2>
+<p class="section-text">Loyihalar va o‘yinlarni yaratishda foydalanadigan texnologiyalar.</p>
+<div class="skills-grid">
+<div class="skill-card"><svg viewBox="0 0 128 128"><path fill="#e44d26" d="M19 3l9 101 36 10 36-10 9-101z"/></svg><h3>HTML5</h3></div>
+<div class="skill-card"><svg viewBox="0 0 128 128"><path fill="#264de4" d="M19 3l9 101 36 10 36-10 9-101z"/></svg><h3>CSS3</h3></div>
+<div class="skill-card"><svg viewBox="0 0 128 128"><circle cx="64" cy="64" r="40" fill="#f7df1e"/></svg><h3>JavaScript</h3></div>
+<div class="skill-card"><svg viewBox="0 0 24 24"><path fill="#f05032" d="M12 0L1.6 6v12L12 24l10.4-6V6z"/></svg><h3>Git</h3></div>
+<div class="skill-card"><svg viewBox="0 0 24 24"><path fill="#181717" d="M12 .5C5.7.5.9 5.3.9 11.6c0 5 3.2 9.3 7.6 10.8"/></svg><h3>GitHub</h3></div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2>Aloqa</h2>
+<p class="section-text">Hamkorlik, loyihalar yoki salomlashish uchun bog‘laning!</p>
+<div class="contact-box">
+<a class="contact-btn" href="#">📱 Telefon raqam</a>
+<a class="contact-btn" href="#">💬 Telegram</a>
+<a class="contact-btn" href="#">💻 GitHub</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Miraziz Baxtiyarov — Frontend Dasturchi</p>
+</footer>
+
+<script>
+// HTML Quiz
+function checkQuiz(){
+let radios=document.getElementsByName('q1');
+let result=document.getElementById('quiz-result');
+for(let r of radios){if(r.checked){result.innerText=r.value==='correct'?'✅ To‘g‘ri!':'❌ Noto‘g‘ri!'; return;}}
+result.innerText='Javobni tanlang!';
+}
+
+// JS Click Counter
+let count=0; let time=5; let interval;
+function incrementCounter(){
+if(!interval){interval=setInterval(()=>{time--;document.getElementById('time-left').innerText='Qolgan vaqt: '+time;if(time<=0){clearInterval(interval);interval=null;alert('Vaqt tugadi! Bosishlar: '+count);count=0;time=5;document.getElementById('click-count').innerText=count; document.getElementById('time-left').innerText='Qolgan vaqt: '+time;}},1000);}
+count++; document.getElementById('click-count').innerText=count;
+}
+
+// JS Tosh-Qog‘oz-Qaychi
+function playRPS(choice){
+const comp=['rock','paper','scissors'][Math.floor(Math.random()*3)];
+let res='';
+if(choice===comp) res='Durrang!';
+else if((choice==='rock' && comp==='scissors')||(choice==='paper' && comp==='rock')||(choice==='scissors' && comp==='paper')) res='Siz yutdingiz!';
+else res='Siz yutqazdingiz!';
+document.getElementById('rps-result').innerText='Kompyuter tanladi: '+comp+'. '+res;
+}
+
+// CSS Shakl Topish
+function checkShape(el, correct){
+const result=document.getElementById('shape-result');
+if(correct){result.innerText="✅ To‘g‘ri! Doirani topdingiz!"; result.style.color="#4ade80";}
+else{result.innerText="❌ Noto‘g‘ri! Qayta urinib ko‘ring."; result.style.color="#f87171";}
+}
+</script>
+</body>
+</html>
